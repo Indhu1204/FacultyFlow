@@ -50,6 +50,7 @@ dependencies {
     implementation libs.firebase.auth
     implementation libs.firebase.firestore
 
+<<<<<<< HEAD
     // Firebase
     implementation platform(libs.firebase.bom)
     implementation libs.firebase.auth
@@ -58,6 +59,8 @@ dependencies {
 // ✅ ADD THIS HERE
     implementation "com.google.mlkit:text-recognition:16.0.1"
 
+=======
+>>>>>>> 5e233c7c3562890288bc3be70aaab896d23edf59
     implementation libs.androidx.lifecycle.runtime.ktx
     implementation libs.androidx.activity.compose
     implementation platform(libs.androidx.compose.bom)

@@ -27,12 +27,20 @@ class MyBookingsAdapter : ListAdapter<Booking, MyBookingsAdapter.BookingViewHold
         
         fun bind(booking: Booking) {
             binding.tvFacultyName.text = booking.facultyName
+<<<<<<< HEAD
             binding.tvBookingTime.text = "${booking.date}, ${booking.timeSlot}"
             binding.tvStudentNote.text = booking.studentNote
 
             // Set status badge
             binding.tvStatus.text =
                 booking.status.replaceFirstChar { it.uppercaseChar() }
+=======
+            binding.tvBookingTime.text = booking.bookingTime
+            binding.tvStudentNote.text = booking.studentNote
+
+            // Set status badge
+            binding.tvStatus.text = booking.status.replaceFirstChar { it.uppercase() }
+>>>>>>> 5e233c7c3562890288bc3be70aaab896d23edf59
             
             // Set status color
             val (statusColor, statusBg) = when (booking.status) {

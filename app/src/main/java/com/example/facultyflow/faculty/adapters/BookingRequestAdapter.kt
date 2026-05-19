@@ -3,19 +3,29 @@ package com.example.facultyflow.faculty.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+<<<<<<< HEAD
 import android.widget.EditText
 import android.widget.FrameLayout
 import androidx.appcompat.app.AlertDialog
+=======
+>>>>>>> 5e233c7c3562890288bc3be70aaab896d23edf59
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.facultyflow.databinding.ItemBookingRequestBinding
 import com.example.facultyflow.faculty.models.BookingRequest
+<<<<<<< HEAD
 import com.example.facultyflow.R
 
 class BookingRequestAdapter(
     private val onAccept: (BookingRequest, String) -> Unit,
     private val onDecline: (BookingRequest, String) -> Unit
+=======
+
+class BookingRequestAdapter(
+    private val onAccept: (BookingRequest) -> Unit,
+    private val onDecline: (BookingRequest) -> Unit
+>>>>>>> 5e233c7c3562890288bc3be70aaab896d23edf59
 ) : ListAdapter<BookingRequest, BookingRequestAdapter.BookingViewHolder>(BookingDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookingViewHolder {
@@ -34,11 +44,15 @@ class BookingRequestAdapter(
         fun bind(bookingRequest: BookingRequest) {
             binding.tvStudentName.text = bookingRequest.studentName
             binding.tvRequestedTime.text = bookingRequest.requestedTime
+<<<<<<< HEAD
             binding.tvNotePreview.text = if (bookingRequest.note.length > 50) {
                 bookingRequest.note.take(50) + "..."
             } else {
                 bookingRequest.note
             }
+=======
+            binding.tvNotePreview.text = bookingRequest.note.take(50) + if (bookingRequest.note.length > 50) "..." else ""
+>>>>>>> 5e233c7c3562890288bc3be70aaab896d23edf59
             binding.tvFullNote.text = bookingRequest.note
 
             // Set expand/collapse functionality
@@ -53,6 +67,7 @@ class BookingRequestAdapter(
             }
 
             binding.btnAccept.setOnClickListener {
+<<<<<<< HEAD
                 showReplyDialog(bookingRequest, true)
             }
 
@@ -94,6 +109,16 @@ class BookingRequestAdapter(
             builder.show()
         }
 
+=======
+                onAccept(bookingRequest)
+            }
+
+            binding.btnDecline.setOnClickListener {
+                onDecline(bookingRequest)
+            }
+        }
+
+>>>>>>> 5e233c7c3562890288bc3be70aaab896d23edf59
         private fun toggleExpandedState() {
             if (isExpanded) {
                 binding.expandedSection.visibility = View.VISIBLE

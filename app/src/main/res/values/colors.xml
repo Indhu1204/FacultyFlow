@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5e233c7c3562890288bc3be70aaab896d23edf59
     <!-- Apple System Colors -->
     <color name="ios_blue">#007AFF</color>
     <color name="ios_green">#34C759</color>
@@ -11,11 +14,15 @@
     <color name="ios_indigo">#5856D6</color>
     <color name="ios_pink">#FF2D55</color>
     <color name="ios_teal">#5AC8FA</color>
+<<<<<<< HEAD
 
     <!-- 🔥 REQUIRED FOR SLOT STATUS (NEW) -->
     <color name="green">#34C759</color>
     <color name="red">#FF3B30</color>
 
+=======
+    
+>>>>>>> 5e233c7c3562890288bc3be70aaab896d23edf59
     <!-- Neutral Colors -->
     <color name="ios_gray">#8E8E93</color>
     <color name="ios_gray2">#AEAEB2</color>
@@ -23,7 +30,11 @@
     <color name="ios_gray4">#D1D1D6</color>
     <color name="ios_gray5">#E5E5EA</color>
     <color name="ios_gray6">#F2F2F7</color>
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 5e233c7c3562890288bc3be70aaab896d23edf59
     <!-- UI Semantics -->
     <color name="apple_background">#F2F2F7</color>
     <color name="apple_card">#FFFFFF</color>
@@ -37,13 +48,22 @@
     <color name="apple_gray">@color/ios_gray</color>
     <color name="apple_light_gray">@color/ios_gray6</color>
     <color name="apple_secondary_background">@color/ios_gray6</color>
+<<<<<<< HEAD
 
     <!-- Fallbacks / Material -->
+=======
+    
+    <!-- Fallbacks/Legacy Material Colors (Required for some drawables) -->
+>>>>>>> 5e233c7c3562890288bc3be70aaab896d23edf59
     <color name="amber_500">#FFC107</color>
     <color name="green_500">#4CAF50</color>
     <color name="grey_500">#9E9E9E</color>
     <color name="grey_300">#E0E0E0</color>
     <color name="white">#FFFFFFFF</color>
     <color name="black">#FF000000</color>
+<<<<<<< HEAD
 
 </resources>
+=======
+</resources>
+>>>>>>> 5e233c7c3562890288bc3be70aaab896d23edf59

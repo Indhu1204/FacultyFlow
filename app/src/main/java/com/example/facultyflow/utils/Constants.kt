@@ -5,6 +5,12 @@ object Constants {
     const val USER_TYPE_STUDENT = "student"
     const val USER_TYPE_FACULTY = "faculty"
     
+<<<<<<< HEAD
+=======
+    // Faculty Access Code
+    const val FACULTY_ACCESS_CODE = "RVU_FAC_2024"
+    
+>>>>>>> 5e233c7c3562890288bc3be70aaab896d23edf59
     // Booking Status
     const val BOOKING_STATUS_PENDING = "pending"
     const val BOOKING_STATUS_CONFIRMED = "confirmed"
@@ -13,7 +19,11 @@ object Constants {
     
     // Availability Status
     const val AVAILABILITY_AVAILABLE = "green"
+<<<<<<< HEAD
     const val AVAILABILITY_BUSY = "amber"
+=======
+    const val AVAILABILITY_BUSY = "red"
+>>>>>>> 5e233c7c3562890288bc3be70aaab896d23edf59
     const val AVAILABILITY_IN_CLASS = "grey"
     
     // Email Domain

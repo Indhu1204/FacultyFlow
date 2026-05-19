@@ -2,6 +2,10 @@ plugins {
     id("com.android.application")
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+<<<<<<< HEAD
+=======
+    alias(libs.plugins.kotlin.compose) // ✅ ADD THIS
+>>>>>>> 5e233c7c3562890288bc3be70aaab896d23edf59
     id("com.google.gms.google-services")
 }
 
@@ -18,6 +22,12 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+<<<<<<< HEAD
+=======
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.0"
+    }
+>>>>>>> 5e233c7c3562890288bc3be70aaab896d23edf59
 
     buildTypes {
         release {
@@ -45,7 +55,17 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.google.firebase:firebase-firestore-ktx")
+<<<<<<< HEAD
     
+=======
+    implementation("androidx.activity:activity-compose:1.8.2")
+
+    implementation("androidx.compose.ui:ui:1.6.0")
+    implementation("androidx.compose.material3:material3:1.2.1")
+    implementation("androidx.compose.ui:ui-tooling-preview:1.6.0")
+
+    debugImplementation("androidx.compose.ui:ui-tooling:1.6.0")
+>>>>>>> 5e233c7c3562890288bc3be70aaab896d23edf59
     implementation(libs.androidx.core-ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

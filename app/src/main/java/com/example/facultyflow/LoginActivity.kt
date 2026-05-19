@@ -2,6 +2,10 @@ package com.example.facultyflow
 
 import android.content.Intent
 import android.os.Bundle
+<<<<<<< HEAD
+=======
+import android.view.View
+>>>>>>> 5e233c7c3562890288bc3be70aaab896d23edf59
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.facultyflow.databinding.ActivityLoginBinding
@@ -58,10 +62,15 @@ class LoginActivity : AppCompatActivity() {
     private fun performFirebaseLogin(email: String, password: String) {
         binding.btnLogin.isEnabled = false
         binding.btnLogin.text = "Signing in..."
+<<<<<<< HEAD
+=======
+        binding.progressBar.visibility = View.VISIBLE
+>>>>>>> 5e233c7c3562890288bc3be70aaab896d23edf59
 
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
+<<<<<<< HEAD
                     val userId = auth.currentUser?.uid ?: ""
                     
                     // Fetch user details from Firestore
@@ -91,11 +100,74 @@ class LoginActivity : AppCompatActivity() {
                 } else {
                     binding.btnLogin.isEnabled = true
                     binding.btnLogin.text = "Sign In"
+=======
+                    val user = auth.currentUser
+                    
+                    // Force reload to get latest verification status
+                    user?.reload()?.addOnCompleteListener { reloadTask ->
+                        if (user != null && user.isEmailVerified) {
+                            fetchUserProfile(user.uid, email)
+                        } else {
+                            binding.btnLogin.isEnabled = true
+                            binding.btnLogin.text = "Sign In"
+                            binding.progressBar.visibility = View.GONE
+                            
+                            Toast.makeText(this, "Please verify your email first.", Toast.LENGTH_LONG).show()
+                            
+                            // Option to resend verification
+                            binding.tvResendEmail.visibility = View.VISIBLE
+                            binding.tvResendEmail.setOnClickListener {
+                                user?.sendEmailVerification()
+                                Toast.makeText(this, "Verification email resent.", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    }
+                } else {
+                    binding.btnLogin.isEnabled = true
+                    binding.btnLogin.text = "Sign In"
+                    binding.progressBar.visibility = View.GONE
+>>>>>>> 5e233c7c3562890288bc3be70aaab896d23edf59
                     Toast.makeText(this, "Authentication failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                 }
             }
     }
 
+<<<<<<< HEAD
+=======
+    private fun fetchUserProfile(userId: String, email: String) {
+        db.collection("users").document(userId).get()
+            .addOnSuccessListener { document ->
+                if (document != null && document.exists()) {
+                    val name = document.getString("name") ?: ""
+                    val userType = document.getString("userType") ?: ""
+                    
+                    // Mark as verified in DB as well
+                    db.collection("users").document(userId).update("isVerified", true)
+                    
+                    preferencesManager.userName = name
+                    preferencesManager.userEmail = email
+                    preferencesManager.userType = userType
+                    preferencesManager.isLoggedIn = true
+                    
+                    navigateToDashboard()
+                } else {
+                    resetLoginUI()
+                    Toast.makeText(this, "User profile not found", Toast.LENGTH_SHORT).show()
+                }
+            }
+            .addOnFailureListener { e ->
+                resetLoginUI()
+                Toast.makeText(this, "Error fetching profile: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    private fun resetLoginUI() {
+        binding.btnLogin.isEnabled = true
+        binding.btnLogin.text = "Sign In"
+        binding.progressBar.visibility = View.GONE
+    }
+
+>>>>>>> 5e233c7c3562890288bc3be70aaab896d23edf59
     private fun navigateToDashboard() {
         val intent = if (preferencesManager.userType == Constants.USER_TYPE_STUDENT) {
             Intent(this, FacultyDirectoryActivity::class.java)

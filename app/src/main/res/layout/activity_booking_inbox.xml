@@ -55,6 +55,7 @@
                 style="@style/TextAppearance.App.TitleLarge"
                 android:layout_marginBottom="24dp" />
 
+<<<<<<< HEAD
             <!-- 🔥 NEW BUTTON ADDED HERE -->
             <Button
                 android:id="@+id/btnUploadTimetable"
@@ -63,6 +64,8 @@
                 android:text="Upload Timetable"
                 android:layout_marginBottom="16dp" />
 
+=======
+>>>>>>> 5e233c7c3562890288bc3be70aaab896d23edf59
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvBookings"
                 android:layout_width="match_parent"
@@ -100,8 +103,15 @@
                     android:textColor="@color/apple_tertiary_label"
                     android:textSize="15sp" />
             </LinearLayout>
+<<<<<<< HEAD
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
+=======
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+>>>>>>> 5e233c7c3562890288bc3be70aaab896d23edf59

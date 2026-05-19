@@ -99,6 +99,17 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
+<<<<<<< HEAD
+=======
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone" />
+
+>>>>>>> 5e233c7c3562890288bc3be70aaab896d23edf59
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLogin"
                 style="@style/AppleButton"
@@ -108,6 +119,20 @@
                 app:backgroundTint="@color/ios_blue" />
 
             <TextView
+<<<<<<< HEAD
+=======
+                android:id="@+id/tvResendEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="Didn't get an email? Resend"
+                android:textColor="@color/ios_blue"
+                android:visibility="gone"
+                android:textSize="14sp" />
+
+            <TextView
+>>>>>>> 5e233c7c3562890288bc3be70aaab896d23edf59
                 android:id="@+id/tvSignupToggle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
